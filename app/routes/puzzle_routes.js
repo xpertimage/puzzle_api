@@ -30,7 +30,7 @@ const router = express.Router()
 // INDEX
 // GET /puzzles
 router.get('/puzzles', requireToken, (req, res, next) => {
-  console.log("Req.user.id=", req.user.id)
+  // console.log("Req.user.id=", req.user.id)
   Puzzle.find({owner: req.user.id})
     .then(puzzles => {
       // `puzzles` will be an array of Mongoose documents
